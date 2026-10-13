@@ -1,0 +1,23 @@
+{
+  "branches": ["main"],
+  "tagFormat": "v${version}",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          { "type": "refactor", "release": "patch" },
+          { "type": "chore", "release": "patch" },
+          { "type": "build", "release": "patch" }
+        ]
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    ["@semantic-release/npm", { "npmPublish": false, "tarballDir": "release" }],
+    [
+      "@semantic-release/github",
+      { "assets": [{ "path": "release/*.tgz" }], "successComment": false, "failComment": false, "releasedLabels": false }
+    ]
+  ]
+}

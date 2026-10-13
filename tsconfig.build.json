@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "incremental": false
+  },
+  // The published tarball is the audit surface: it carries the library and nothing else. Tests and
+  // the token-exchange dev script are typechecked by tsconfig.json but never emitted.
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.test.ts"]
+}

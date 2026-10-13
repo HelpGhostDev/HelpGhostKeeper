@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    // Emitted alongside every .d.ts so Ctrl+click on a symbol lands on this package's real source
+    // rather than its generated declaration.
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "sourceMap": true,
+    "incremental": true,
+    "types": ["node", "vitest/globals"]
+  },
+  "include": ["src/**/*.ts", "dev/**/*.ts", "vitest.config.mts"],
+  "exclude": ["node_modules", "dist"]
+}

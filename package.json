@@ -1,0 +1,56 @@
+{
+  "name": "@helpghost/keeper-lookup",
+  "version": "0.0.0-development",
+  "description": "Read-only Keeper Secrets Manager lookup whose API cannot return a secret.",
+  "license": "MIT",
+  "author": "HelpGhost (https://helpghost.io)",
+  "homepage": "https://github.com/HelpGhostDev/HelpGhostKeeper#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelpGhostDev/HelpGhostKeeper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HelpGhostDev/HelpGhostKeeper/issues"
+  },
+  "keywords": [
+    "keeper",
+    "keeper-secrets-manager",
+    "ksm",
+    "secrets",
+    "read-only"
+  ],
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "default": "./dist/main.js"
+    }
+  },
+  "files": [
+    "./dist"
+  ],
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepack": "pnpm build",
+    "typecheck": "tsc --noEmit --incremental --tsBuildInfoFile node_modules/.cache/tsc/typecheck.tsbuildinfo",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "exchange": "tsx dev/exchange-token.ts"
+  },
+  "dependencies": {
+    "@keeper-security/secrets-manager-core": "~17.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "~22.14.0",
+    "dotenv": "~16.4.5",
+    "semantic-release": "~25.0.9",
+    "tsx": "~4.19.1",
+    "typescript": "~5.8.3",
+    "vitest": "~5.0.0"
+  }
+}
